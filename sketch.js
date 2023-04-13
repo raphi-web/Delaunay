@@ -61,6 +61,17 @@ function drawPoints(points,color,size) {
   drawPoint(p,color,size);
   }
 }
+
+function mousePressed() {
+  points = randomPoints(60, window.innerWidth-300, window.innerHeight-300,300,300);
+  redraw();
+}
+
+document.addEventListener('click', (event) => {
+  mousePressed()
+})
+
+
 function updatePoints() {
   for (let i = 0; i< points.length; i++) {
     points[i].x += random(-1,+1);
